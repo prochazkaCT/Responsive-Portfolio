@@ -65,9 +65,7 @@ h3 {
 
 #logo {
   float: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* width: 250px; */
+  width: 250px;
   height: 90px;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 30px;
@@ -77,6 +75,12 @@ h3 {
   text-align: center;
   text-decoration: none;
   background: #4aaaa5;
+  -webkit-animation-name: logo; 
+  -webkit-animation-duration: 10s; 
+  animation-name: logo;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 nav {
@@ -109,27 +113,48 @@ footer {
   text-align: center;
   background: #666;
   border-top: 8px solid #4aaaa5;
-  height: 50px;
 }
 
-h3, h2 {
+/* sidebar */
+
+.sidebar {
+  float: right;
+  width: 100%;
+  max-width: 270px;
+  padding: 30px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+h3,
+.sidebar h2 {
   padding-bottom: 20px;
   margin-bottom: 15px;
   line-height: 22px;
   border-bottom: 2px solid #eee;
 }
 
+.social {
+  width: 62px;
+  height: 62px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+
+.social:last-child {
+  margin-right: 0;
+}
+
 /* main */
 
 #main-container {
   padding-top: 130px;
-  /* min-height: calc(100vh - 70px); */
 }
 
 .main-section {
   float: left;
   width: 100%;
-  /* max-width: 960px; */
   max-width: 650px;
   padding: 30px;
   margin: 0 0 40px;
@@ -218,34 +243,45 @@ input[type=submit] {
   background: #4aaaa5;
   border: 0 none;
 }
+/* My added animation to my Logo*/
 
-/* sidebar */
-
-.sidebar {
-  float: right;
-  width: 100%;
-  max-width: 270px;
-  padding: 30px;
-  margin-bottom: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
+@-webkit-keyframes logo {
+  from {background: color #4aaaa5;}
+  to {background-color: yellow;}
 }
 
-h3,
-.sidebar h2 {
-  padding-bottom: 20px;
-  margin-bottom: 15px;
-  line-height: 22px;
-  border-bottom: 2px solid #eee;
+
+@keyframes logo {
+  from {background-color:#4aaaa5}
+  to {background-color: yellow;}
 }
 
-.social {
-  width: 62px;
-  height: 62px;
-  margin-top: 8px;
-  margin-right: 5px;
+/*
+  These rules take effect when the browser's width
+  is either 980px, 768px or less.
+*/
+
+@media only screen 
+and (max-width: 640px) {
+  body {
+    background:orangered;
+  }
+
+  #masthead {
+    position: static;
 }
 
-.social:last-child {
-  margin-right: 0;
+/*I couldn't get this to work -- I wanted the background to change color between two screen sizes)*/
+
+@media only screen and (max-width: 768px) and (min-width: 641px) {
+  body {
+    background: yellowgreen;
+    background-color: yellowgreen;
+  }
 }
+
+@media only screen and (max-width: 980px) and (min-width:769px) {
+  body {
+    background: url("../images/squared_metal.png");  
+}
+ 
