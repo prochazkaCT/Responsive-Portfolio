@@ -97,6 +97,10 @@ nav a {
   text-decoration: none;
   border-left: 1px solid #efefef;
 }
+ nav a:hover{
+   color: #4aaaa5;
+   font-weight: bold;
+}
 
 nav a:first-child {
   border-left: 0 none;
@@ -267,21 +271,60 @@ and (max-width: 640px) {
     background:orangered;
   }
 
+  .container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
   #masthead {
     position: static;
-}
+  }
 
-/*I couldn't get this to work -- I wanted the background to change color between two screen sizes)*/
+  .main-section, .work, .auth-image {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  #main-container {
+    padding: 20px;
+  }
+}
 
 @media only screen and (max-width: 768px) and (min-width: 641px) {
   body {
     background: yellowgreen;
-    background-color: yellowgreen;
   }
-}
+
+  .main-section, .work, .auth-image {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container {
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}  
 
 @media only screen and (max-width: 980px) and (min-width:769px) {
   body {
     background: url("../images/squared_metal.png");  
+  }
+
+  .main-section, .work, .auth-image {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+  }
 }
- 
