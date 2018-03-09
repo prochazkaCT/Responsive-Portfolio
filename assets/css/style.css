@@ -262,7 +262,7 @@ input[type=submit] {
 
 /*
   These rules take effect when the browser's width
-  is either 980px, 768px or less.
+  is either 980px, 768px or less. I got the color change between sizes to work :)
 */
 
 @media only screen 
@@ -307,7 +307,7 @@ and (max-width: 640px) {
     width: 75%;
     max-width: 960px;
     margin: 0 auto;
-  }
+  } 
 }  
 
 @media only screen and (max-width: 980px) and (min-width:769px) {
@@ -321,10 +321,4 @@ and (max-width: 640px) {
     width: 100%;
   }
 
-  .container {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    position: relative;
-  }
 }
